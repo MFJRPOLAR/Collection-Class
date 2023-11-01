@@ -5,8 +5,59 @@ def main():
     # testGettersAndSetters()
     # testAddNodeAfter()
     # testRemoveNodeAfter()
-    review()
+    #review()
+    #testListLength()
+    testListSearch()
 
+def testListLength():
+    print("Testing List Length")
+
+    # construct a node with data equal to S and link equal to None 
+    # and assign its reference to head 
+    head = node('S', None) # S 
+
+    # construct a node with data equal to B and link equal to head 
+    # and assign its refernce to head 
+    head = node('B', head) # B -> S 
+
+    # construct a node with data equal to 0 and link equal to head 
+    # and assign its reference to head 
+    head = node('O', head) # O -> B -> S 
+
+    # construct a node with data equal to J and link equal to head 
+    # and assign its reference to head 
+    head = node('J', head) # J -> O -> B -> S
+
+    print("Length of head is:", node.listLength(head))
+
+def testListSearch():
+
+    # construct a node with data equal to S and link equal to None 
+    # and assign its reference to head 
+    head = node('S', None) # S 
+
+    # construct a node with data equal to B and link equal to head 
+    # and assign its refernce to head 
+    head = node('B', head) # B -> S 
+
+    # construct a node with data equal to 0 and link equal to head 
+    # and assign its reference to head 
+    head = node('O', head) # O -> B -> S 
+
+    # construct a node with data equal to J and link equal to head 
+    # and assign its reference to head 
+    head = node('J', head) # J -> O -> B -> S
+
+    print("Head contains", node.listSearch(head,'J').get_data())
+    print("Head contains", node.listSearch(head,'O').get_data())
+    print("Head contains", node.listSearch(head,'B').get_data())
+    print("Head contains", node.listSearch(head,'S').get_data())
+
+    if (node.listSearch(head,'Z') != None):
+        print("Head contains", node.listSearch(head,'Z').get_data())
+    else:
+        print("Head doesn't contain Z.")
+    
 def review():
     print("Review")
     
