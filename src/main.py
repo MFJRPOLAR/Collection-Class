@@ -7,11 +7,78 @@ def main():
     # testRemoveNodeAfter()
     #review()
     #testListLength()
-    testListSearch()
+    #testListSearch()
+    #testListPosition()
+    #testListCopy()
+    testListCopyWithTail()
 
-def testListLength():
-    print("Testing List Length")
+def testListCopyWithTail():
+    print("Testing List Copy with Tail")
+    # construct a node with data equal to S and link equal to None 
+    # and assign its reference to head 
+    source = node('S', None) # S 
 
+    # construct a node with data equal to B and link equal to head 
+    # and assign its refernce to head 
+    source = node('B', source) # B -> S 
+
+    # construct a node with data equal to 0 and link equal to head 
+    # and assign its reference to head 
+    source = node('O', source) # O -> B -> S 
+
+    # construct a node with data equal to J and link equal to head 
+    # and assign its reference to head 
+    source = node('J', source) # J -> O -> B -> S
+
+    copy = node.listCopywithTail(source) 
+    # [J -> O -> B -> S , S]
+
+    print("Source contains:", node.listPosition(source,1).get_data(),
+          node.listPosition(source,2).get_data(),
+          node.listPosition(source,3).get_data(),
+          node.listPosition(source,4).get_data())
+    
+    print("Copy head contains:", node.listPosition(copy[0],1).get_data(),
+          node.listPosition(copy[0],2).get_data(),
+          node.listPosition(copy[0],3).get_data(),
+          node.listPosition(copy[0],4).get_data())
+
+    print("Copy tail contains:", node.listPosition(copy[1],1).get_data())
+
+def testListCopy():
+    print("Testing List Copy")
+    # construct a node with data equal to S and link equal to None 
+    # and assign its reference to head 
+    source = node('S', None) # S 
+
+    # construct a node with data equal to B and link equal to head 
+    # and assign its refernce to head 
+    source = node('B', source) # B -> S 
+
+    # construct a node with data equal to 0 and link equal to head 
+    # and assign its reference to head 
+    source = node('O', source) # O -> B -> S 
+
+    # construct a node with data equal to J and link equal to head 
+    # and assign its reference to head 
+    source = node('J', source) # J -> O -> B -> S
+
+    copy = node.listCopy(source) # J -> O -> B -> S, but a different memory location 
+
+    print("Source contains:", node.listPosition(source,1).get_data(),
+          node.listPosition(source,2).get_data(),
+          node.listPosition(source,3).get_data(),
+          node.listPosition(source,4).get_data())
+    
+    print("Copy contains:", node.listPosition(copy,1).get_data(),
+          node.listPosition(copy,2).get_data(),
+          node.listPosition(copy,3).get_data(),
+          node.listPosition(copy,4).get_data())
+
+
+
+def testListPosition():
+    print("Testing List Position")
     # construct a node with data equal to S and link equal to None 
     # and assign its reference to head 
     head = node('S', None) # S 
@@ -28,7 +95,16 @@ def testListLength():
     # and assign its reference to head 
     head = node('J', head) # J -> O -> B -> S
 
-    print("Length of head is:", node.listLength(head))
+    print("First node conatins data:", node.listPosition(head,1).get_data()) # J -> O -> B -> S 
+    print("Second node conatins data:", node.listPosition(head,2).get_data()) # O -> B -> S
+    print("Third node conatins data:", node.listPosition(head,3).get_data()) # B -> S 
+    print("Fourth node conatins data:", node.listPosition(head,4).get_data()) # S 
+
+    if (node.listPosition(head,5)!= None):
+        print("Fifth node contains data:",node.listPosition(head,5).get_data())
+    else:
+        print("There is no fifth node.")
+
 
 def testListSearch():
 
@@ -57,6 +133,27 @@ def testListSearch():
         print("Head contains", node.listSearch(head,'Z').get_data())
     else:
         print("Head doesn't contain Z.")
+
+def testListLength():
+    print("Testing List Length")
+
+    # construct a node with data equal to S and link equal to None 
+    # and assign its reference to head 
+    head = node('S', None) # S 
+
+    # construct a node with data equal to B and link equal to head 
+    # and assign its refernce to head 
+    head = node('B', head) # B -> S 
+
+    # construct a node with data equal to 0 and link equal to head 
+    # and assign its reference to head 
+    head = node('O', head) # O -> B -> S 
+
+    # construct a node with data equal to J and link equal to head 
+    # and assign its reference to head 
+    head = node('J', head) # J -> O -> B -> S
+
+    print("Length of head is:", node.listLength(head))
     
 def review():
     print("Review")
