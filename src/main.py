@@ -1,16 +1,45 @@
 from node.node import *
+from stack.stack import *
 
 def main():
-    # testInit()
-    # testGettersAndSetters()
-    # testAddNodeAfter()
-    # testRemoveNodeAfter()
+    #testInit()
+    #testGettersAndSetters()
+    #testAddNodeAfter()
+    #testRemoveNodeAfter()
     #review()
     #testListLength()
     #testListSearch()
     #testListPosition()
     #testListCopy()
-    testListCopyWithTail()
+    #testListCopyWithTail()
+    testPush()
+
+def testPush():
+    print("Testing List Copy With Tail")
+
+    s = stack()
+    print("Stack Size is:", s.size())    # 0 
+    print("Stack contains:", s)          # []
+
+    s.push('S')
+    print("Stack Size is:", s.size())    # 1
+    print("Stack contains:", s)          # [S]
+
+    #s.push('B')
+    s.push(1)
+    print("Stack Size is:", s.size())    # 2
+    print("Stack contains:", s)          # [B S]
+
+    #s.push('O')
+    s.push((1,2))
+    print("Stack Size is:", s.size())    # 3
+    print("Stack contains:", s)          # [O B S]
+
+    #s.push('J')
+    s.push([1,2,3])
+    print("Stack Size is:", s.size())    # 4
+    print("Stack contains:", s)          # [J O B S]
+
 
 def testListCopyWithTail():
     print("Testing List Copy with Tail")
@@ -78,6 +107,7 @@ def testListCopy():
 
 
 def testListPosition():
+
     print("Testing List Position")
     # construct a node with data equal to S and link equal to None 
     # and assign its reference to head 
@@ -298,7 +328,7 @@ def testAddNodeAfter():
 
     # get selection's link and assign its reference back to 
     # selection 
-    selection = selection.getLink() # B
+    selection = selection.getLink() # S
 
     print("The head node contains data:", head.get_data()) # J
     print("The selection node contains data:",selection.get_data()) # S
@@ -365,7 +395,7 @@ def testGettersAndSetters():
     print("The head node contains link:", head.getLink())
 
     # set head's link to a new code
-    head.setlink(node('O',None)) # S -> O
+    head.setLink(node('O',None)) # S -> O
 
 def testInit():
     print("Testing Node Init")

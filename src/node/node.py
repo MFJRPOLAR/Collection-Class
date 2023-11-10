@@ -140,7 +140,7 @@ class node:
         try: 
             # if position is less than 1, raise error 
             if (position <1):
-                raise ValueError("Position may bot be less than 1")
+                raise ValueError("Position may not be less than 1")
         except ValueError as e:
             # display error and exit 
             exit(e)
@@ -160,7 +160,7 @@ class node:
         
     @staticmethod
     def listCopy(source):
-        """Make a spoy of a specified node.
+        """Make a copy of a specified node.
 
         Args:
             source (node): specified node 
