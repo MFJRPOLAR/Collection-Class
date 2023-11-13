@@ -1,5 +1,6 @@
 from node.node import *
 from stack.stack import *
+from stack.balanceparens import *
 
 def main():
     #testInit()
@@ -12,7 +13,87 @@ def main():
     #testListPosition()
     #testListCopy()
     #testListCopyWithTail()
-    testPush()
+    #testPush()
+    #testPop()
+    #testIsEmpty()
+    #testPeek()
+    print("Parenthesis are balanced?",balanceparens.isBalanced("{X+Y"))     #False
+    print("Parenthesis are balanced?",balanceparens.isBalanced("{X+Y)"))    #False
+    print("Parenthesis are balanced?",balanceparens.isBalanced("{X+Y}*Z"))  #True 
+    print("Parenthesis are balanced?",balanceparens.isBalanced("[A+B]*({X+Y}*Z)")) #True
+
+
+
+def testPeek():
+    print("Testing Peek Method in Stack Class")
+
+    s = stack()
+    print("Stack Size is:", s.size())           # 0  
+    print("Stack contains:", s)                 # []
+    s .push('S')
+    print("Stack Size is:", s.size())           # 1
+    print("Stack contains:", s)                 # [S]
+    print("Top element in stack is:", s.peek()) # S   
+    s .push('B')
+    print("Stack Size is:", s.size())           # 2
+    print("Stack contains:", s)                 # [B S]
+    print("Top element in stack is:", s.peek()) # B
+    s .push('O')
+    print("Stack Size is:", s.size())           # 3
+    print("Stack contains:", s)                 # [O B S]
+    print("Top element in stack is:", s.peek()) # O
+    s .push('J')
+    print("Stack Size is:", s.size())           # 4  
+    print("Stack contains:", s)                 # [J O B S]
+    print("Top element in stack is:", s.peek()) # J
+
+
+
+def testIsEmpty():
+    print("Testing  Cis Empty Method in Stack Class")
+
+    s = stack()
+    s.push('S')
+    s.push('B')
+    s.push('O')
+    s.push('J')
+
+    print("Stack Size is:", s.size())    # 0 
+    print("Stack contains:", s)          # [J O B S]
+
+    while (not s.isEmpty()):
+        print("Just popped:", s.pop())
+
+    print("Stack Size is:", s.size())    # 0
+    print("Stack contains:", s)          # []
+
+def testPop():
+    print("Testing Pop Method in Stack Class")
+
+    s = stack()
+    s.push('S')
+    s.push('B')
+    s.push('O')
+    s.push('J')
+
+    print("Stack Size is:", s.size())    # 0 
+    print("Stack contains:", s)          # [J O B S]
+    print("Just popped:",s.pop())        # J
+
+    print("Stack Size is:", s.size())    # 3 
+    print("Stack contains:", s)          # [O B S]
+    print("Just popped:",s.pop())        # O
+
+    print("Stack Size is:", s.size())    # 2
+    print("Stack contains:", s)          # [B S]
+    print("Just popped:",s.pop())        # B
+
+    print("Stack Size is:", s.size())    # 1
+    print("Stack contains:", s)          # [S]
+    print("Just popped:",s.pop())        # S  
+
+    #print("Just popped:",s.pop())        # Just to check the valueError.  
+
 
 def testPush():
     print("Testing List Copy With Tail")
