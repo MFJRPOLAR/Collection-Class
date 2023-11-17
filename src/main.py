@@ -3,6 +3,9 @@ from stack.stack import *
 from stack.balanceparens import *
 from stack.calculator import *
 from stack.serialsearch import *
+from stack.binarysearch import *
+#from stack.selectionsort import *
+from stack.insertionsort import * 
 
 def main():
     #testInit()
@@ -27,7 +30,120 @@ def main():
     #print("(6+(3*(6-4))) =", calculator.evaluate("(6+(3*(6-4)))"))
     #print("((5+2)-(3*(6/9))) =", calculator.evaluate("((5+2)-(3*(6/9)))"))
     #print("((5*2)-(3*(6/2))) =", calculator.evaluate("((5*2)-(3*(6/2)))"))
-    testSerialSearch()
+    #testSerialSearch()
+    #testbinarysearch()
+    #testselectionsort()
+    testInsertionSort()
+
+#MODULE ASSIGNMENT 6
+def testInsertionSort():
+
+    # create an empty stack
+    s = stack()
+
+    # initialize first
+    first = 6
+
+    # push -7 onto the top of the stack
+    s.push(-7)
+    
+    # push 42 onto the top of the stack
+    s.push(42)
+    
+    # push 70 onto the top of the stack
+    s.push(70)
+
+    # push 39 onto the top of the stack
+    s.push(39)
+
+    # push 3 onto the top of the stack
+    s.push(3)
+
+    # push 63 onto the top of the stack
+    s.push(63)
+
+    # push 8 onto the top of the stack
+    s.push(8)
+
+    # print unsorted stack
+    print(f"Unsorted List:",s)
+
+    # call insertion sort method
+    sort(s,first)
+
+    # print sorted stack
+    print(f"Sorted List:",s)
+
+
+    
+def testselectionsort():
+
+    s = stack()
+
+    first = 1
+
+    # push -7 onto the top of the stack
+    s.push(-7)
+
+    # push 42 onto the top of the stack
+    s.push(42)
+
+    # push 70 onto the top of the stack
+    s.push(70)
+
+    # push 39 onto the top of the stack
+    s.push(39)
+
+    # push 3 onto the top of the stack
+    s.push(3)
+
+    # push 63 onto the top of the stack
+    s.push(63)
+
+    # push 8 onto the top of the stack
+    s.push(8)
+
+    # print the stack
+    print(s)
+
+    print(sort(s,first))
+
+def testbinarysearch():
+    s = stack()
+
+    # initialize first
+    first = 1
+
+    target = 42
+
+    # push -7 onto the top of the stack
+    s.push(-7)
+
+    # push 42 onto the top of the stack
+    s.push(42)
+
+    # push 70 onto the top of the stack
+    s.push(70)
+
+    # push 39 onto the top of the stack
+    s.push(39)
+
+    # push 3 onto the top of the stack
+    s.push(3)
+
+    # push 63 onto the top of the stack
+    s.push(63)
+
+    # push 8 onto the top of the stack
+    s.push(8)
+
+    # print the stack
+    print(s)
+
+    # call serial search method and display its return
+    print(f"{target} is found in index", search(s,first,target))
+
+    
 
 def testSerialSearch():
     # create an empty stack
