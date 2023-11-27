@@ -1,11 +1,13 @@
 from node.node import *
 from stack.stack import *
-from stack.balanceparens import *
-from stack.calculator import *
-from stack.serialsearch import *
-from stack.binarysearch import *
+#from stack.balanceparens import *
+#from stack.calculator import *
+#from stack.serialsearch import *
+#from stack.binarysearch import *
 #from stack.selectionsort import *
-from stack.insertionsort import * 
+#from stack.insertionsort import * 
+from queues.queue import *
+
 
 def main():
     #testInit()
@@ -33,7 +35,68 @@ def main():
     #testSerialSearch()
     #testbinarysearch()
     #testselectionsort()
-    testInsertionSort()
+    #testInsertionSort()
+    testEnqueue()
+    testQueueIsEmpty()
+    testDequeue()
+    testQueuePeek() 
+
+
+def testEnqueue():
+    print("Testing Enqueue")
+
+    s = queue()
+    print("Queue Size is:", s.size())    # 0 
+    print("Queue contains:", s)          # []
+
+    s.enqueue(1)
+    s.enqueue(2)
+    print("Queue Size is:", s.size())    # 0 
+    print("Queue contains:", s)          # []
+
+def testQueueIsEmpty():
+    print("Testing Queue is Empty")
+
+    s = queue()
+    s.enqueue('S')
+    s.enqueue('B')
+    s.enqueue('O')
+    s.enqueue('J')
+
+    print("Queue Size is:", s.size())    
+    print("Queue contains:", s)          
+    print("Is queue Empty?",s.isEmpty())
+
+def testDequeue():
+    print("Testing Dequeue")
+
+    s = queue()
+    s.enqueue('S')
+    s.enqueue('B')
+    s.enqueue('O')
+    s.enqueue('J')
+
+    print("Queue Size is:", s.size())    
+    print("Queue contains:", s)          
+
+    s.dequeue()
+    s.dequeue()
+    print("Queue Size is:", s.size())    
+    print("Queue contains:", s)    
+
+def testQueuePeek():
+    print("Testing Queue Peek")
+
+    s = queue()
+    s.enqueue('S')
+    s.enqueue('B')
+    s.enqueue('O')
+    s.enqueue('J')
+
+    print("Queue Size is:", s.size())    
+    print("Queue contains:", s)  
+    print("Front Element in Queue is:", s.peek())
+
 
 #MODULE ASSIGNMENT 6
 def testInsertionSort():
@@ -42,7 +105,7 @@ def testInsertionSort():
     s = stack()
 
     # initialize first
-    first = 6
+    first = 1
 
     # push -7 onto the top of the stack
     s.push(-7)
@@ -75,7 +138,7 @@ def testInsertionSort():
     print(f"Sorted List:",s)
 
 
-    
+
 def testselectionsort():
 
     s = stack()
@@ -211,7 +274,7 @@ def testPeek():
 
 
 def testIsEmpty():
-    print("Testing  Cis Empty Method in Stack Class")
+    print("Testing is Empty Method in Stack Class")
 
     s = stack()
     s.push('S')
