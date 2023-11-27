@@ -7,6 +7,7 @@ from stack.stack import *
 #from stack.selectionsort import *
 #from stack.insertionsort import * 
 from queues.queue import *
+from queues.palindrome import *
 
 
 def main():
@@ -36,10 +37,19 @@ def main():
     #testbinarysearch()
     #testselectionsort()
     #testInsertionSort()
-    testEnqueue()
-    testQueueIsEmpty()
-    testDequeue()
-    testQueuePeek() 
+    #testEnqueue()
+    #testQueueIsEmpty()
+    #testDequeue()
+    #testQueuePeek() 
+    testIsPalindrome()
+    
+def testIsPalindrome():
+    exp = input("Please enter an expression: ")
+
+    if (palindrome.isPalindrome(exp)):
+        print("Your expression is palindrome")
+    else: 
+        print("Your Expression is not a palindrome")
 
 
 def testEnqueue():
