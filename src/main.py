@@ -7,8 +7,8 @@ from stack.stack import *
 #from stack.selectionsort import *
 #from stack.insertionsort import * 
 from queues.queue import *
-from queues.palindrome import *
-
+#from queues.palindrome import *
+from queues.palindromequeue import *
 
 def main():
     #testInit()
@@ -41,7 +41,21 @@ def main():
     #testQueueIsEmpty()
     #testDequeue()
     #testQueuePeek() 
-    testIsPalindrome()
+    #testIsPalindrome()
+    module7practice()
+
+def module7practice():
+    exp = input("Please enter an expression: ")
+    while exp != '':
+        if (palindrome.isPalindrome(exp)):
+            print("Your expression is palindrome")
+        else: 
+            print("Your Expression is not a palindrome")
+        exp = input("Please enter an expression: ")
+    else:
+        print("Good Bye")
+    
+
     
 def testIsPalindrome():
     exp = input("Please enter an expression: ")
