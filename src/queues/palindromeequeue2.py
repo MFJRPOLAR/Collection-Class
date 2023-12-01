@@ -1,4 +1,3 @@
-from stack.stack import * 
 from queues.queue import * 
 
 class palindrome:
@@ -14,8 +13,8 @@ class palindrome:
             Boolean: True if the specified expression is palindrome, else
             False.
         """ 
-        q = queue() #queue to read the expression forward 
-        s = stack() #stack to read the expression backward
+        q1 = queue() #queue to read the expression forward 
+        q2= queue()
 
         mismatches = 0 # used to keep track of the differences in the queue and stack 
 
@@ -27,15 +26,21 @@ class palindrome:
             # if the current character is an alphabetic character 
             if e.isalpha():
                 # push it onto the stack and add it to the queue
-                s.push(e)
-                q.enqueue(e)
-                
-        
+                q1.enqueue(e)
+
+        i = len(expression)-1
+
+        while (i >= 0): 
+            if expression[i].isalpha():
+                q2.enqueue(expression[i])
+            i -= 1 
+
+
         # while the queue isn't empty 
-        while (not(q.isEmpty())):
+        while (not(q1.isEmpty())):
             # if the element at the front of the queue isn't
             # equal to the eleent at the top of the stack 
-            if (q.dequeue() != s.pop()):
+            if (q1.dequeue() != q2.dequeue()):
                 #increment mismatches
                 mismatches += 1 
             

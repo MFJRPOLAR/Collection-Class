@@ -6,9 +6,12 @@ from stack.stack import *
 #from stack.binarysearch import *
 #from stack.selectionsort import *
 #from stack.insertionsort import * 
-from queues.queue import *
+#from queues.queue import *
 #from queues.palindrome import *
-from queues.palindromequeue import *
+#from queues.palindromequeue import *
+#from queues.palindromeequeue2 import *
+from queues.module7assingment import *
+
 
 def main():
     #testInit()
@@ -42,7 +45,22 @@ def main():
     #testDequeue()
     #testQueuePeek() 
     #testIsPalindrome()
-    module7practice()
+    #module7practice()
+    module7assignment()
+
+def module7assignment():
+    exp = input("Please enter an expression: ")
+    while exp != '':
+        if (palindrome.isPalindrome(exp)):
+            print("Your expression is palindrome")
+        else: 
+            print("Your Expression is not a palindrome")
+            print("Mistmatch detected at:",palindrome.isPalindrome(exp))
+        exp = input("Please enter an expression: ")
+    else:
+        print("Good Bye")
+
+
 
 def module7practice():
     exp = input("Please enter an expression: ")
