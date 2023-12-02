@@ -51,11 +51,12 @@ def main():
 def module7assignment():
     exp = input("Please enter an expression: ")
     while exp != '':
-        if (palindrome.isPalindrome(exp)):
+        mismatcehs, store  = palindrome.isPalindrome(exp)
+        if (mismatcehs):
             print("Your expression is palindrome")
-        else: 
+        else:
             print("Your Expression is not a palindrome")
-            print("Mistmatch detected at:",palindrome.isPalindrome(exp))
+            print("Mistmatch detected at:", store)
         exp = input("Please enter an expression: ")
     else:
         print("Good Bye")
